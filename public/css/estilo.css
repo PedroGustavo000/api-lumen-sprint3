@@ -1,0 +1,522 @@
+@font-face {
+    font-family: 'George Cafe' ;
+    src: url('fonts/Louis\ George\ Cafe.ttf')
+    format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@5px,100;5px,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    background-color: #110037;
+    font-family: 'George Cafe';
+}
+
+.sol{
+    position:  absolute;
+    background-color: #ffff00 ;
+    height: 70%;
+    width: 35%;
+    border-bottom-left-radius: 100%;
+    margin-left: 55%;
+}
+
+.header {
+    /* border-bottom: 3px solid #ffff00; */
+    display: flex;
+    background-color: #311C5E
+}
+
+.destaque {
+    font-weight: bolder ;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+.header .container {
+    justify-content: space-between;
+}
+
+.icone {
+    position: absolute;
+    padding-top: 9px;
+    width: 50px;
+    height: 50px;
+    margin-left: 12%;
+}
+
+.titulo {
+    color: #ffff00;
+    width: fit-content;
+    font-weight: 600;
+    margin-left: 7%;
+}
+
+.navBar {
+    color: white;
+    list-style: none;
+    display: flex;
+    justify-content:space-evenly;
+    width: 300px;
+    padding: 0;
+    align-items: center;
+    font-size: 16px;
+}
+
+/* fim do cabeçalho */
+
+/* começo do banner */
+
+.banner{
+    height: 400px;
+    color: #ffffff;
+    display: flex ;
+}
+
+.banner .container p span{
+    font-weight: bold;
+}
+
+.banner .container{
+    display: flex;
+}
+
+.textos{
+    display: flex;
+    flex-direction: column;
+}
+
+.banner .container img{
+    margin-top: 90px;
+    height: 380px;
+    margin-right: 20px;
+}
+
+.banner .container p{
+    margin-top: 150px;
+    font-size: 48px;
+    width: 85%;
+    margin-left: 30px;
+    font-weight: 100;
+    margin-bottom: 15px;
+}
+
+.banner .container h4 {
+    margin-left: 30px;
+    width: 80%;
+    font-weight: lighter;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.bannerCadastro{
+    height: fit-content;
+    color: #ffffff;
+    display: flex ;
+    padding-bottom: 100px;
+}
+
+.botoes {
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 370px;
+}
+
+.btn_amarelo{
+    background-color: #ffff00;
+    height: 38px;
+    width: 200px;
+    margin-top: 25px;
+    font: 700 15px 'George Cafe';
+    color: black;
+    font-weight: 800;
+    border: 0;
+    border-radius: 20px;   
+    cursor: pointer;
+}
+
+.btn_roxo{
+    background-color: #110037;
+    height: 38px;
+    width: 150px;
+    margin-top: 25px;
+    font: 700 15px 'George Cafe';
+    color: white;
+    border: 0;
+    border-radius: 20px;   
+    cursor: pointer;
+    border: solid 2px white;
+}
+/* fim do banner */
+
+/* Começo do social */
+
+.social {
+    display: flex;
+    color: white;
+    margin-top: 80px;
+} 
+
+.social .container .boxes .box img{
+    width: 25%;
+}
+
+.social .container .boxes .box2 img{
+    width: 25%;
+    margin-right: 100px;
+}
+
+.social .container .boxes {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    display: flex;
+    margin: 50px;
+    width: 100%;
+}
+
+.box h4{
+    font-size: 25px;
+    margin-bottom: 2%;
+}
+
+.box p {
+    width: 40%;
+}
+
+.box .texto{
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+}
+
+.box2 {
+    display: flex;
+    margin: 50px;
+    width: 100%;
+    flex-direction: row-reverse;
+ 
+}
+
+.box2 h4{
+    font-size: 25px;
+}
+
+.box2 p {
+    margin-top: 0;
+    width: 42%;
+}
+
+.box2 .texto{
+    display: flex;
+    flex-direction: column ;
+    width: fit-content;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: center;
+}
+
+
+/* fim do social */
+
+/* começo do footer */
+
+.footer {
+    background-color: #39253c;
+    height: 100px;
+    color: #ffffff;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .container {
+    justify-content: center;
+}
+
+.footerFixo {                    
+    background-color: #39253c;
+    height: 100px;
+    color: #ffffff;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footerFixo .container {
+    justify-content: center;
+}
+
+
+/* A classe footerfixo foi desenvolvida para que os dois footers ficassem no fim pois quando o da home dava certo o do login dava errado e vice versa */
+
+
+/* LOGIN */
+
+a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.card {
+    background-color: #39253c;
+    display: flex;
+    color: #ffff00;
+    align-items: center;
+    height: fit-content;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    padding-bottom: 50px;
+}
+
+.banner .containerLogin .card {
+    margin-top: 4%;
+}
+
+.containerLogin{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.bannerCadastro .containerLogin .card {
+    margin-top: 4%;
+}
+
+.card h1{
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.card h4{
+    font-size: 15px;
+}
+
+.card h3{
+    margin-top: 15%;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.card input {
+    border: #ffff00 solid 1px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.card button {
+    background-color: #ffff00;
+    height: 30px;
+    width: 150px;
+    margin-top: 40px;
+    font: 700 20px 'George Cafe';
+    color: black;
+    border: 0;
+    border-radius: 10px;   
+    cursor: pointer;
+}
+
+/* inicio dashboard  */
+
+.headerDashboard{
+    display: flex;
+    justify-content: flex-end;
+    background-color: #311C5E;
+    width: 85%;
+    float: right;
+    border-bottom: 1px gray solid;
+}
+
+.tituloDash{
+    color: white;
+    font-weight: 600;
+    height: 57px;
+}
+
+.navbarDash{
+    color: white;
+    list-style: none;
+    display: flex;
+    width: 300px;
+    padding: 0;
+    align-items: center;
+    font-size: 16px;
+}
+
+.navbarDash li{
+    margin-top: 3px;
+}
+
+.userNome {
+    color: white;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.userImg{
+    height: 35px;
+    margin-right: 20px ;
+}
+
+.menuLateral{
+    background-color: #311C5E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 15%;
+    height: 100%;
+    border-right: 1px gray solid;
+    color: white;
+}
+
+.conteudo{
+    width: 84.8%;
+    height: 87%;
+    margin-left: 15%;
+    margin-top: 6%;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.graficos{
+    margin-top: 25px;
+    display: flex;
+    border: solid 1px black;
+    width: 45%;
+    height: 45%;
+    background-color: #311C5E;
+    color: white;
+    justify-content: center;
+}
+
+.infoSensores{
+    display: flex;
+    margin-top: 25px;
+    display: flex;
+    width: 45%;
+    height: 45%;
+    color: white;
+}
+
+.opcoes{
+    display: flex;
+    flex-direction: column;
+}
+
+.opcoes img{
+    height: 15px;
+}
+
+.opcoes p{
+    font-size: 20px;
+}
+
+
+.infos {
+    display: flex;
+    flex-direction: column;
+    width: 49.5%;
+    height: 100%;
+    border: solid 1px black;
+    align-items: center;
+}
+
+.infoSetor {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.infos h1{
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    width: fit-content; 
+    margin-bottom: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.infos h4{
+    margin: 40px;
+    font-size: 50px;
+}
+
+.infoSetor h1{ 
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 35px;
+}
+
+.infoSetor h2{
+    font-size: 50px;
+    margin: 0;
+}
+
+.sensores{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.metricas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+#fundoAlerta{
+    background-color: #e2d34e;
+}
+
+#fundoOk{
+    background-color: #90ee90;
+}
+
+#fundoRuim{
+    background-color: #ff6347;
+}
+/* Calculadora */
+
+#div_msg{
+    background-color: #39253c;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 80%;
+    padding: 10px;
+    margin-top: 10%;
+    display: none;
+}
+
+#msg_erro{
+    color: tomato;
+    display: none;
+    margin-top: 50px;
+}
+

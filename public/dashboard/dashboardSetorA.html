@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setor A</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- inicio menu lateral  -->
+
+    <div class="menuLateral">
+        <h1 class="tituloDash">Dashboard</h1>
+        <div class="opcoes">
+            <p><a href="dashboardGeral.html">Geral</a></p>
+            <p class="destaque"><a href="dashboardSetorA.html">Setor A</a></p>
+            <p><a href="dashboardSetorB.html">Setor B</a></p>
+            <p><a href="dashboardSetorC.html">Setor C</a></p>
+            <p><a href="dashboardSetorD.html">Setor D</a></p>
+        </div>
+    </div>
+
+    <!-- fim menu lateral -->
+
+    <!-- inicio cabeçalho -->
+    <div class="headerDashboard">
+        <ul class="navbarDash">
+            <h1 class="userNome">Olá, usuário!</h1>
+            <img class="userImg" src="../imgs/user.png">
+            <li><a href="../cadastro.html">Sair</a></li>
+        </ul>
+    </div>
+
+    <!-- Fim do cabeçalho -->
+
+    <!-- começo do conteúdo -->
+
+    <div class="conteudo">
+        <div class="infoSensores">
+            <div class="sensores">
+                <div class="infoSetor" id="fundoAlerta">
+                    <h1>Sensor 1</h1>
+                    <h2>831</h2>
+                </div>
+                <div class="infoSetor" id="fundoOk">
+                    <h1>Sensor 2</h1>
+                    <h2>753</h2>
+                </div>
+            </div>
+            <div class="metricas">
+                <div class="torta">
+                    <canvas id="myChart4" style="position: relative; height:18vh; width:15vw"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="graficos">
+            <div>
+                <canvas id="myChart" style="position: relative; height:38vh; width:35vw"></canvas>
+            </div>
+        </div>
+        <div class="graficos">
+            <div>
+                <canvas id="myChart2" style="position: relative; height:38vh; width:35vw"></canvas>
+            </div>
+        </div>
+        <div class="graficos">
+            <div>
+                <canvas id="myChart3" style="position: relative; height:38vh; width:35vw"></canvas>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+
+    // grafico 1, meidição da luminosidade nas horas em que o shopping fica aberto
+
+    const labels = [
+        '10:00',
+        '11:00',
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '18:00',
+        '19:00',
+        '20:00',
+        '21:00',
+        '22:00',
+    ];
+
+    // grafico 2, Media semanal do setor
+    const meses = [
+        'Segunda',
+        'Terça ',
+        'Quarta',
+        'Quinta',
+        'Sexta',
+        'Sábado',
+        'Domingo',
+    ];
+
+    //grafico 3, media mensal do setor
+
+    const semanas = [
+        'Semana 1',
+        'Semana 2',
+        'Semana 3',
+        'Semana 4',
+    ];
+
+    // grafico 4, semi donut, ilustração das métricas
+    const metricas = [
+        'alta/baixa',
+        'média',
+        'Ideal',
+    ]
+
+    // grafico 1, meidição da luminosidade nas horas em que o shopping fica aberto
+    const data = {
+        labels: labels,
+        datasets: [{
+            //linha 1 sensor 1
+            label: 'Sensor 1',
+            backgroundColor: '#FFFFFF',
+            borderColor: '#FFFFFF',
+            data: [755, 833, 921, 678, 464, 834, 756, 653, 816, 532, 728, 687],
+        },
+
+
+        {
+            //linha 2 sensor 2 
+            label: 'Sensor 2',
+            backgroundColor: '#FCD900',
+            borderColor: '#FCD900',
+            data: [835, 724, 645, 933, 567, 837, 543, 678, 981, 684, 981, 724],
+        }
+        ]
+    };
+
+    // grafico 2, Media semestral do setor
+
+    const data2 = {
+        labels: meses,
+        datasets: [{
+            // barras media semestral setor 1
+            label: 'Setor A',
+            backgroundColor: '#FFFFFF',
+            borderColor: '#FFFFFF',
+            data: [782, 821, 792, 852, 861, 713, 695],
+        }
+        ]
+    };
+
+    // grafico 3 media mensal do setor
+
+    const data3 = {
+        labels: semanas,
+        datasets: [{
+            //barras media semanal
+            label: 'Setor A',
+            backgroundColor: '#FCD900',
+            borderColor: '#FCD900',
+            data: [854, 763, 812, 697],
+        }
+        ]
+    };
+
+    // grafico 4 metricas para os alertas
+
+    const data4 = {
+        labels: metricas,
+        datasets: [{
+            //divisoes da metrica
+            backgroundColor: ['#ff6347', '#e2d34e', '#90ee90'],
+            borderColor: ['#ff6347', '#e2d34e', '#90ee90'],
+            data: [33.3, 33.3, 33.3],
+            circumference: 180,
+            rotation: 270,
+        }
+        ]
+    }
+
+    // config grafico 1
+    const config = {
+        type: 'line',
+        data: data,
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Monitoramento diário dos sensores',
+                    color: 'white'
+                },
+                legend: {
+                    labels: {
+                        color: 'white'
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        color: 'white'
+                    },
+                    ticks: {
+                        color: 'white'
+                    }
+                },
+                y: {
+                    grid: {
+                        color: 'white'
+                    },
+                    ticks: {
+                        color: 'white'
+                    }
+                }
+            }
+        }
+    };
+
+    // config grafico 2
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Média semanal do Setor',
+                    color: 'white'
+                },
+                legend: {
+                    labels: {
+                        color: 'white'
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        color: 'white'
+                    },
+                    ticks: {
+                        color: 'white'
+                    }
+                },
+                y: {
+                    grid: {
+                        color: 'white'
+                    },
+                    ticks: {
+                        color: 'white'
+                    }
+                }
+            }
+        }
+    };
+
+    // config grafico 3
+    const config3 = {
+        type: 'bar',
+        data: data3,
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: `Média Mensal do Setor`,
+                    color: 'white'
+                },
+                legend: {
+                    labels: {
+                        color: 'white'
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        color: 'white'
+                    },
+                    ticks: {
+                        color: 'white'
+                    }
+                },
+                y: {
+                    grid: {
+                        color: 'white'
+                    },
+                    ticks: {
+                        color: 'white'
+                    }
+                }
+            }
+        }
+    };
+
+    // config gráfico 4
+    const config4 = {
+        type: 'doughnut',
+        data: data4,
+        options: {
+            events: [],
+            plugins: {
+                title: {
+                    display: true,
+                    text: `Métricas dos valores de luminosidade`,
+                    color: 'white'
+                },
+                legend: {
+                    labels: {
+                        color: 'white'
+                    }
+                },
+            },
+        },
+    };
+</script>
+
+<script>
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
+
+    const myChart3 = new Chart(
+        document.getElementById('myChart3'),
+        config3
+    );
+
+    const myChart4 = new Chart(
+        document.getElementById('myChart4'),
+        config4
+    );
+</script>
