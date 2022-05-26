@@ -67,7 +67,6 @@
 <script>
 
 function entrar() {
-        // aguardar();
 
         var emailVar = ipt_email.value;
         var senhaVar = ipt_senha.value;
@@ -77,7 +76,7 @@ function entrar() {
             return false;
         }
         else {
-            setInterval(sumirMensagem, 5000)
+            mensagem_erro.innerHTML = "";
         }
 
         console.log("FORM LOGIN: ", emailVar);
@@ -108,7 +107,7 @@ function entrar() {
 
                     setTimeout(function () {
                         window.location = "./dashboard/dashboardGeral.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 1000);
 
                 });
 
@@ -118,7 +117,6 @@ function entrar() {
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    // finalizarAguardar(texto);
                 });
             }
 
