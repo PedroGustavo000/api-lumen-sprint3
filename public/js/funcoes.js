@@ -5,14 +5,13 @@ function validarSessao() {
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
 
-    var h1LoginUsuario = document.getElementById("h1_login_usuario");
+    var nome_usuario = document.getElementById("nome_user");
 
     if (email != null && nome != null) {
         // window.alert(`Seja bem-vindo, ${nome}!`);
-        if (h1LoginUsuario != undefined) {
-            h1LoginUsuario.innerHTML = email;
+        if (nome_usuario != undefined) {
+            nome_usuario.innerHTML = nome;
         }
-        b_usuario.innerHTML = nome;
 
         // finalizarAguardar();
     } else {

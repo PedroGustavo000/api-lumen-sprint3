@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body>
+<body onload="validarSessao()">
     <!-- inicio menu lateral  -->
 
     <div class="menuLateral">
@@ -30,9 +30,9 @@
     <!-- inicio cabeçalho -->
     <div class="headerDashboard">
         <ul class="navbarDash">
-            <h1 class="userNome">Olá, usuário!</h1>
+            <h1 class="userNome">Olá, <span id="nome_user">Usuario!</span></h1>
             <img class="userImg" src="../assets/imgs/user.png">
-            <li><a href="../cadastro.html">Sair</a></li>
+            <li><a onclick="limparSessao()">Sair</a></li>
         </ul>
     </div>
 
