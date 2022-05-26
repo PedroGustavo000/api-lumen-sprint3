@@ -42,7 +42,7 @@ create table Registro(
 	foreign key (fkSensor) references Sensor(idSensor)
 );
 
--- CRIAÇÃO DE TABELAS NA AZURE
+-- CRIAÇÃO DE TABELAS NO MYSQL WORKBENCH
 
 create table Shopping(
 	cnpj char(14) primary key,
