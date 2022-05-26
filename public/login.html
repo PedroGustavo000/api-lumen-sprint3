@@ -42,7 +42,7 @@
 
                 <button onclick="entrar()">Entrar</button>
 
-                <h4 id="msg_erro"></h4>
+                <h4 id="mensagem_erro"></h4>
             </div>
         </div>
     </div>
@@ -67,7 +67,7 @@
 <script>
 
 function entrar() {
-        aguardar();
+        // aguardar();
 
         var emailVar = ipt_email.value;
         var senhaVar = ipt_senha.value;
@@ -97,7 +97,7 @@ function entrar() {
 
             if (resposta.ok) {
                 console.log(resposta);
-
+                alert("Deu certo");
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
@@ -113,12 +113,12 @@ function entrar() {
                 });
 
             } else {
-
+                mensagem_erro.innerHTML = "Email ou senha invalidos";
                 console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    finalizarAguardar(texto);
+                    // finalizarAguardar(texto);
                 });
             }
 
